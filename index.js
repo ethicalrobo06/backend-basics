@@ -1,16 +1,18 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 
-app.get("/", (req, res) => {
-  res.send("Welcome to Expressjs!");
-});
+app.set('view engine', 'ejs')
 
-app.get("/about", (req, res) => {
-  res.send("<h1>About</h1>");
-});
+app.get('/', (req, res) => {
+  res.render('index')
+})
 
-app.get("/profile", (req, res) => {
-  res.send("<h1>Profile</h1>");
-});
+app.get('/about', (req, res) => {
+  res.send('<h1>About</h1>')
+})
 
-app.listen(3000);
+app.get('/profile', (req, res) => {
+  res.send('<h1>Profile</h1>')
+})
+
+app.listen(3000)
